@@ -1,5 +1,7 @@
 {
   "name": "Ionic6firebase",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

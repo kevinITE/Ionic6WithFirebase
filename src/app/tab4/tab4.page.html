@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit-user</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="full">
+    <form [formGroup]="updateEmployeeForm" (ngSubmit)="updateForm()">
+      
+      <ion-item>
+        <ion-label postion="floating"> employeeId </ion-label>
+        <ion-input formControlName="employeeId" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+      <ion-label postion="floating"> Name </ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label postion="floating"> lname </ion-label>
+      <ion-input formControlName="lname" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label postion="floating"> job </ion-label>
+      <ion-input formControlName="job" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label postion="floating"> age </ion-label>
+      <ion-textarea formControlName="age" type="text" required></ion-textarea>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block">
+ update user
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
+  </ion-list>
+  
+
+
+</ion-content>

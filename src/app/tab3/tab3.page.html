@@ -1,17 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+
+<ion-header>
+  <ion-navbar>
     <ion-title>
-      Tab 3
+      Add Person
     </ion-title>
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Employee ID</ion-label>
+      <ion-input type="text" [(ngModel)]="employeeId"></ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-label floating>First Nane</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+      <ion-item>
+        <ion-label floating>Last Nane</ion-label>
+        <ion-input type="text" [(ngModel)]="lname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Job title</ion-label>
+        <ion-input type="text" [(ngModel)]="job"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>AGE</ion-label>
+        <ion-input type="text" [(ngModel)]="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button large full (click)="createEmployee(name,lname,age,job,employeeId)">ADD  <ion-icon name="add"></ion-icon></button>
+      </ion-item>
+
+      <ion-item>
+          <button ion-button large full (click)="Updateuser1()">update  <ion-icon name="add"></ion-icon></button>
+        </ion-item>
+
+    </ion-list>
+    <ion-label floating>firestore</ion-label>
+    <ion-item>
+        <button ion-button large full (click)="createSong()">firestore add   <ion-icon name="add"></ion-icon></button>
+      </ion-item>
+
+      
 </ion-content>

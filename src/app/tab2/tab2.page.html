@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      authntications 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,4 +14,63 @@
   </ion-header>
 
   <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+  <div *ngIf="user | async as user; else showLogin">
+    <h1>Hello {{user.uid}}!</h1>
+    <button (click)="logout()">Logout</button>
+  </div>
+  <ng-template #showLogin>
+    <p>Please login.</p>
+    <button (click)="loginig()">Login with Google</button>
+    <button (click)="login()">login via username password</button>
+    <button (click)="register()"> register</button>
+
+    <button (click)="sendPasswordResetEmail()"> sendPasswordResetEmail</button>
+    <button (click)="logout()">Logout</button>
+  </ng-template>
+
+  
+  <div id="sign-in-button"></div>
+
+  <div class="main">
+    <ion-card no-margin>
+      <ion-card-content>
+        <ion-row class="row">
+          <div class="fire-logo">
+            <img src="../../assets/icon/favicon.png" class="img-logo">
+            <ion-text class="ion-padding">
+              <h2 class="ion-no-margin ion-margin-vertical ion-text-center">Welcome to Ionic 6 Firebase Phone Auth</h2>
+            </ion-text>
+          </div>
+        </ion-row>
+        <ion-grid class="phoneAuthGrid">
+          <ion-row>
+            <ion-col size="4">
+              <ion-select class="phoneCountry" value="brown" okText="Okay" cancelText="Dismiss"
+                (ionChange)="countryCodeChange($event)" [value]="CountryCode">
+                <ion-select-option *ngFor="let country of CountryJson" value={{country.dial_code}}>
+                  {{country.dial_code + ' ' + country.name}}</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="8">
+              <ion-input clearInput type="test" placeholder="Your Contact Number" [(ngModel)]="PhoneNo"
+                class="input ion-padding-horizontal" clear-input="true"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" (click)="signinWithPhoneNumber($event)" color="undefined"
+                class="btn-transition">
+                Sign in with Phone number</ion-button>
+                
+                <ion-button expand="block" (click)="OtpVerification11()" color="undefined"
+                class="btn-transition">
+                OtpVerification11</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+    </ion-content>
+   

@@ -20,10 +20,30 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
+        path: 'create',
+        loadChildren: () => import('../pages/create/create.module').then( m => m.CreatePageModule)
+      },
+      {
+        path: 'tab4',
+        loadChildren: () => import('../tab4/tab4.module').then( m => m.Tab4PageModule)
+      } 
+      ,{
+        path: 'tab4/:id',
+        loadChildren: () => import('../tab4/tab4.module').then( m => m.Tab4PageModule)
+      },
+      
+      {
+        path: 'detail',
+        loadChildren: () => import('../pages/detail/detail.module').then( m => m.DetailPageModule)
+      },
+      { path: 'detail/:id',
+      loadChildren: () => import('../pages/detail/detail.module').then( m => m.DetailPageModule)
+    },
+      {
+        path: 'homefirestore',
+        loadChildren: () => import('../pages/homefirestore/homefirestore.module').then( m => m.HomefirestorePageModule)
+      },
+    
     ]
   },
   {
